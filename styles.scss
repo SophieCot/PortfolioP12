@@ -1,0 +1,411 @@
+@use "slider.scss";
+@use "form.scss";
+@use "projects.scss";
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background-color: #111723;
+  color: white; /* Assurez-vous que le texte soit lisible sur ce fond */
+  h2 {
+    font-weight: 400;
+    background: linear-gradient(90deg, #f42a8b 0%, #1f89db 100%);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+  .title {
+    font-size: 55px;
+    @media (max-width: 768px) {
+        font-size: 30px;
+      }
+  }
+}
+
+.header-container {
+  position: fixed;
+  width: 100%; /* occupe 100% de la largeur, mais avec une largeur maximale */
+  top: 0;
+  left: 50%; /* positionne le header au centre horizontalement */
+  transform: translateX(
+    -50%
+  ); /* ajuste le header pour le centrer parfaitement */
+  background: #111723;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease-in-out;
+  z-index: 10;
+  border: 2px solid #41415a;
+  border-radius: 30px;
+  box-sizing: border-box; /* Inclus padding dans la largeur */
+
+  /* Limite la largeur du header pour qu'il soit de la même taille que les sections */
+  max-width: 1200px; /* Vous pouvez ajuster cette valeur en fonction de la largeur de vos sections */
+  width: 100%; /* La largeur sera 100% de la largeur maximale (1200px) */
+
+  h1 {
+    font-size: 16px;
+    text-transform: uppercase;
+
+    a {
+      text-decoration: none;
+      color: white;
+
+      &:hover {
+        font-weight: 400;
+        background: linear-gradient(90deg, #f42a8b 0%, #1f89db 100%);
+        text-transform: uppercase;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+        transform: scale(1.08);
+      }
+    }
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    text-transform: uppercase;
+  }
+
+  li {
+    display: inline;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    color: inherit;
+
+    &:hover {
+      font-weight: 400;
+      background: linear-gradient(90deg, #f42a8b 0%, #1f89db 100%);
+      text-transform: uppercase;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+    &.active {
+      font-weight: 400;
+      background: linear-gradient(90deg, #f42a8b 0%, #1f89db 100%);
+      text-transform: uppercase;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+  }
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: #ffffff;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-end;
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  border-bottom: 2px solid #41415a;
+
+  @media (max-width: 768px) {
+    border-bottom:none;
+  }
+}
+
+.about-image {
+  width: 300px;
+  height: auto;
+  margin-top: 120px;
+ filter: drop-shadow(-40px 0px 80px rgba(255, 105, 180, 0.3));
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    border-top: 2px solid #41415a;
+    text-align: center;
+  }
+}
+
+
+
+.about-button {
+    margin-block: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  overflow: visible;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgb(244 42 139 / 56%) 0%,
+    rgb(59 154 227) 100%
+  );
+  padding: 18px 36px;
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    background-color: #2980b9;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  background-size: cover;
+  background-attachment: fixed;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project {
+  display: inline-block;
+  background: #111723;
+  border: 2px solid #41415a;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out;
+  text-decoration: none;
+
+
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    outline: none; /* retirer le contour par défaut */
+    border-color: #3498db; /* bordure bleue au focus ou au clic */
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.4); 
+  }
+}
+
+
+// Section Projets
+#projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  filter: drop-shadow(-20px -15px 100px rgba(70, 130, 180, 0.2));
+}
+
+.project {
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    
+  }
+
+  p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    text-decoration: none;
+  }
+
+  img {
+    width: 300px; // Largeur fixe pour toutes les images
+    height: 200px; // Hauteur fixe pour toutes les images
+    object-fit: cover; // Ajuste l'image sans la déformer, tout en gardant son aspect proportionnel
+    border-radius: 5px; // Ajoute des coins arrondis pour l'apparence esthétique
+  }
+}
+
+.slogan {
+    font-size: 45px;
+    text-align: left;
+    @media (max-width: 768px) {
+        text-align: center;
+      }
+}
+
+.contact-text {
+    p {
+        font-size: 20px;
+        text-align: left;
+        @media (max-width: 768px) {
+            text-align: center;
+          }
+    }
+}
+
+.project-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background: darken(black, 10%);
+  }
+}
+
+footer {
+  background: #111723;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+  border-top: 2px solid #41415a;
+
+  .footer-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 15px;
+
+    a {
+      color: white;
+      font-size: 1.5em;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: #ff69b4;
+      }
+    }
+  }
+}
+.menu-mobile {
+    position: fixed;
+    z-index: 5;
+    background-color: rgba(0,0,0,0.5);
+    display:none;
+    width: 100%;
+    height: calc(100vh - 84px);
+
+    ul  {
+        list-style: none;
+        a {
+        color:white;
+        text-decoration: none;
+    }
+    }
+    @media (max-width: 768px) {
+        display: block;
+        }
+}
+.menu-mobile-open {
+    top: 84px; 
+    transition: 0.5s;
+}
+
+.menu-mobile-close {
+    top: -100vh; 
+    transition: 0.5s;
+}
+.burger {
+    display:none;
+}
+@media (max-width: 768px) {
+    .burger {
+      display: block; /* Affiche le menu quand la classe 'open' est ajoutée */
+        align-items: end;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .about-container {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .blockinfo {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    .form-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .skills-slider {
+        .slider-items {
+            gap:0;
+        }
+    }
+}
+
+
+
+// Effet parallax sur certaines sections
+#about, #projects, #contact {
+  background-color: #111723;
+}
+
+

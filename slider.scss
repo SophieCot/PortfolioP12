@@ -1,0 +1,72 @@
+.skills-slider {
+    position: relative;
+    width: 80%;
+    margin: 100px;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.slider-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    text-align: center;
+    flex-shrink: 0;
+    border: 2px solid #41415A;
+    border-radius: 30px;
+}
+
+.slider-items {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.slider-item {
+    text-align: center;
+    margin: 10px;
+}
+
+.slider-item img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Hide all categories initially */
+.slider-category {
+    display: none;
+}
+
+/* Navigation arrows */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2em;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Add smooth transitions */
+.slider-category {
+    transition: opacity 0.5s ease-in-out;
+    filter: drop-shadow(-20px -15px 100px rgba(255, 105, 180, 0.2));
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oh My Food</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <title>Portfolio - Dev Front-End</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <!-- Lien vers la bibliothèque Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+        <button class="burger" id="burger">
+            <i class="fas fa-bars"></i> <!-- Icône burger -->
+          </button>
+      <h1><a href="index.html">Sophie Cottura</a></h1>
+    </header>
+   
+ <section>
+    <div class="projects-container">
+        <a href="https://github.com/SophieCot/p8_kasa/tree/dev/p8-kasa" target="_blank" class="project">
+          <img src="assets/img/Kasa.webp" alt="Projet Kasa" />
+          <h3>Kasa</h3>
+        </a>
+  </div>
+</section>
+  
+  
+    <section>
+        <div class="container">
+      <h2>Contexte et Objectifs</h2>
+        <p>Contexte :
+            Kasa, entreprise spécialisée dans la location d’appartements entre particuliers, entreprend une refonte totale de son site. Initialement développé en ASP.NET, le site passe désormais à une stack JavaScript moderne avec React pour le front-end et Node.js pour le back-end.
+            
+            Objectifs :
+            
+            Développer l’application React en respectant les maquettes Figma fournies.
+            Mettre en place une navigation fluide avec React Router.
+            Intégrer un design responsive et une interface utilisateur ergonomique.
+            Développer des composants réutilisables en React.
+            Implémenter un système de gestion des annonces à partir d’un fichier JSON temporaire.</p>
+    </div>
+    </section>
+    
+    <section>
+        <div class="container">
+      <h2>Fonctionnalités Principales</h2>
+        <ul>
+          <li>Galerie d’images
+            Défilement infini des photos (retour à la première image après la dernière).
+            Suppression des boutons de navigation si une seule image est présente.
+            Maintien d’une hauteur fixe des images, avec centrage automatique.</li>
+          <li>Menu déroulant (Collapse)
+            Initialisation en mode fermé.
+            Ouverture/Fermeture via un clic utilisateur.
+            Animation fluide pour une transition agréable.
+            </li>
+          <li>Navigation et Affichage
+            React Router pour la gestion des routes.
+            Affichage dynamique des annonces en fonction du fichier JSON.
+            Composants réutilisables pour optimiser la maintenance du code.</li>
+        </ul>
+      </div>
+    </section>
+    
+    <section>
+        <div class="container">
+      <h2>Outils et Technologies</h2>
+      <p>Les principaux outils et technologies utilisés dans ce projet sont :</p>
+      <ul>
+        <li>React.js : Développement de l’application en mode composant.</li>
+        <li>React Router : Gestion des pages et navigation fluide.</li>
+        <li>SASS (SCSS) : Gestion avancée des styles, modularisation du CSS.</li>
+        <li>Animations CSS : Pour les transitions de menus et effets interactifs.</li>
+        <li>JSON : Utilisation temporaire d’un fichier JSON comme base de données.</li>
+        <li>Vite.js : Outil rapide pour la création et le développement d’applications React.</li>
+        <li>Git/GitHub : Versionning et suivi des évolutions du projet.</li>
+      </ul>
+    </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+          <p>&copy; Portfolio Sophie Cottura. Tous droits réservés.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/SophieCot" target="_blank" ><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </footer>
+
+
+</body>
+
+</html>

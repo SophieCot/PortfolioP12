@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oh My Food</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <title>Portfolio - Dev Front-End</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <!-- Lien vers la bibliothèque Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+        <button class="burger" id="burger">
+            <i class="fas fa-bars"></i> <!-- Icône burger -->
+          </button>
+      <h1><a href="index.html">Sophie Cottura</a></h1>
+    </header>
+   
+ <section>
+    <div class="projects-container">
+        <a class="project">
+          <img src="assets/img/argentbank.webp" alt="Projet Argent Bank" />
+          <h3>Argent Bank</h3>
+        </a>
+  </div>
+</section>
+  
+  
+    <section>
+        <div class="container">
+      <h2>Contexte et Objectifs</h2>
+       <p>Contexte :
+        Argent Bank est une nouvelle banque en ligne qui souhaite se démarquer dans le secteur bancaire en proposant une application moderne et optimisée. Dans ce cadre, l’équipe technique travaille sur la mise en place d’un tableau de bord utilisateur basé sur React et Redux.
+        
+        Objectifs :
+        
+        Phase 1 : Authentification des utilisateurs
+        
+        Développer l’application React complète et responsive.
+        Implémenter un système d’authentification sécurisé (connexion, déconnexion).
+        Restreindre l’accès aux informations personnelles aux utilisateurs connectés.
+        Permettre à l’utilisateur de modifier son pseudo uniquement.
+        Utiliser Redux pour la gestion du state.
+        Optimiser le code et les ressources (Green Code).
+        Phase 2 : Gestion des transactions
+        
+        Afficher les transactions du mois en cours (groupées par compte).
+        Détail d’une transaction sur une vue dédiée.
+        Ajouter, modifier ou supprimer des informations sur une transaction (mais pas la transaction elle-même).
+        Proposer une modélisation des routes API pour ces fonctionnalités, en respectant la documentation Swagger.
+        </p>
+    </div>
+    </section>
+    
+    <section>
+        <div class="container">
+      <h2>Fonctionnalités Principales</h2>
+        <ul>
+          <p>Authentification et Gestion du Profil:</p>
+            <li> Connexion sécurisée avec gestion des erreurs (mauvais identifiants). </li>
+                <li>Déconnexion propre avec réinitialisation du state Redux. </li>
+                    <li>Accès restreint aux informations du profil après connexion. </li>
+                        <li>Modification possible du pseudo uniquement (pas du prénom ni du nom). </li>
+          <p>Transactions:</p>
+          <li>Affichage des transactions mensuelles par compte.</li>
+            <li> Affichage détaillé d’une transaction spécifique. </li>
+                <li> Modification des informations associées à une transaction. </li>
+                    <li> Respect des bonnes pratiques Green Code (optimisation des images et composants réutilisables).</li>
+        </ul>
+      </div>
+    </section>
+    
+    <section>
+        <div class="container">
+      <h2>Outils et Technologies</h2>
+      <p>Les principaux outils et technologies utilisés dans ce projet sont :</p>
+      <ul>
+        <li>React.js : Développement des interfaces et composants.</li>
+        <li>Redux : Gestion du state global de l’application.</li>
+        <li>React Router : Navigation entre les pages.</li>
+        <li>Swagger (YAML) : Documentation et conception des routes API.</li>
+        <li>Node.js / Express : Back-end et API REST (déjà existants).</li>
+        <li>GitHub : Suivi du projet et gestion des issues.</li>
+      </ul>
+    </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+          <p>&copy; Portfolio Sophie Cottura. Tous droits réservés.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/SophieCot" target="_blank" ><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </footer>
+
+
+</body>
+
+</html>

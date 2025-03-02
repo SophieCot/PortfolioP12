@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/* Section du formulaire */
+.contact-section {
+  text-align: center;
+  color: white;
+}
+
+.form-container {
+  max-width: 800px;
+  width: 100%;
+  position: left;
+}
+
+/* Titre */
+.contact-section h2 {
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+/* Formulaire */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-end;
+}
+
+/* Groupe de champs */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: transparent;
+}
+
+input, textarea {
+  padding: 15px;
+  font-size: 1.2em;
+  font-family: roboto;
+  background-color: transparent;
+  border: 2px solid #41415A;
+  border-radius: 30px;
+  width: 100%;
+  transition: all 0.3s ease;
+  color: white;
+  box-sizing: border-box;
+}
+
+/* Animation focus */
+input:focus, textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+}
+
+/* Bouton */
+.submit-btn {
+  padding: 18px 36px;
+  background: linear-gradient(90deg, rgba(244, 42, 139, 0.56) 0%, rgb(59, 154, 227) 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+@media (max-width: 768px) {
+  .submit-btn {
+    align-self: center;
+  }
+}
+
+.submit-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Message de réponse */
+.form-response {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #28a745;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.form-response.success {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-response.error {
+  color: #e74c3c;
+}
+
+/* Effet de surcharge */
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+}
+
+.contact-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.blockinfo {
+  display: flex;
+  gap: 50px;
+}
+
+.contact-text {
+  width: 100%;
+}
+
+.formbox {
+  width: 100%;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #41415A;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #41415A;
+}/*# sourceMappingURL=form.css.map */
